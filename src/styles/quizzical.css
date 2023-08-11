@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #F5F7FB;
+  color: #293264;
+  font-family: "Karla", sans-serif;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #293264;
+}
+
+.header-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #293264;
+  margin-bottom: 30px;
+}
+
+.btn {
+  font-family: "Karla", sans-serif;
+  width: 190px;
+  height: 50px;
+  background-color: #4D5B9E;
+  color: #F5F7FB;
+  border-radius: 15px;
+}
+
+.blob-bottom {
+  position: absolute;
+  margin: 0px;
+  left: -100px;
+  bottom: -100px;
+  z-index: -1;
+  width: 25vw;
+}
+
+.blob-top {
+  position: absolute;
+  margin: 0px;
+  top: -120px;
+  right: -80px;
+  z-index: -1;
+  width: 300px;
+}/*# sourceMappingURL=quizzical.css.map */
