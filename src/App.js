@@ -44,17 +44,38 @@ const App = () => {
     setStartQuiz(false)
   }
 
+  const shuffleArray = (array) => {
+    const shuffledArray = [...array]
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]]
+    }
+    return shuffledArray
+  }
+
+  const mixAnswers = (correctAnswer, incorrectAnswers) => {
+    const mixedAnswers = shuffleArray([correctAnswer, ...incorrectAnswers])
+    return mixedAnswers
+  }
+  
+
 
   return (
     <>
       <main className='container'>
-        {questions.length > 0 ? ( 
+        {questions.length > 0 ? (
           questions.map((quiz) => {
-            const { id, question, answers } = quiz
+            // eslint-disable-next-line camelcase
+            const { nanoid, question, correct_answer, incorrect_answers } = quiz
+            const mixedOptions = mixAnswers(correct_answer, incorrect_answers)
             return (
-              <div key={id}>
-                <h2>{decode(quiz.question)}</h2>
-                <p>{answers}</p>
+              <div key={nanoid}>
+                <h2>{decode(question)}</h2>
+                <div className='answers'>
+                  {mixedOptions.map((answer, i) => (
+                    <button className='btn-answers' key={i}>{decode(answer)}</button>
+                  ))}
+                </div>
               </div>
             )
           })
