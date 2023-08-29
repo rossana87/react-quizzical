@@ -21,15 +21,6 @@ const App = () => {
         console.log(response.data.results)
         //const data = response.data.results
         setQuestions(response.data.results)
-        // data.map((item) => ({
-        //   id: nanoid(),
-        //   question: item.question,
-        //   correctAnswer: item.correct_answer,
-        //   incorrectAnswer: item.incorrect_answers,
-        //   selectedAnswer: '',
-        //   checked: false,
-        // }))
-        
       } catch (error) {
         console.log(error)
       }

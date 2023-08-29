@@ -1,4 +1,4 @@
-// 
+
 body {
 	margin: 0;
 	box-sizing: border-box;
@@ -58,13 +58,21 @@ body {
       width: 300px;
     }
 
-    .btn-answers {
-      margin-right: 13px;
-      align-items: center;
-      justify-content: center;
-      width: 100px;
-      height: 40px;
-      border-radius: 10px;
-      border: 1px solid #4D5B9E;
-    }
+    
   
+    .answers {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  gap: 10px; 
+}
+
+  .btn-answers {
+  flex: 1; 
+  height: 40px;
+  max-width: 200px; 
+  border-radius: 7px;
+  border: 1px solid #4D5B9E;
+  background-color: #F5F7FB;
+  font-family: "Karla", sans-serif;
+}
