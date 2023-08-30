@@ -44,7 +44,7 @@ const App = () => {
     return shuffledArray
   }
 
-  const mixAnswers = (correctAnswer, incorrectAnswers) => {
+  const allAnswers = (correctAnswer, incorrectAnswers) => {
     const mixedAnswers = shuffleArray([correctAnswer, ...incorrectAnswers])
     return mixedAnswers
   }
@@ -58,13 +58,22 @@ const App = () => {
           questions.map((quiz) => {
             // eslint-disable-next-line camelcase
             const { nanoid, question, correct_answer, incorrect_answers } = quiz
-            const mixedOptions = mixAnswers(correct_answer, incorrect_answers)
+            const mixedOptions = allAnswers(correct_answer, incorrect_answers)
             return (
               <div key={nanoid}>
                 <h2>{decode(question)}</h2>
                 <div className='answers'>
                   {mixedOptions.map((answer, i) => (
-                    <button className='btn-answers' key={i}>{decode(answer)}</button>
+                    <label className='btn-answers' key={i}>
+                      <input
+                        type='radio'
+                        name={`answer_${nanoid}`}
+                        value={answer}
+                        checked={selectedAnswers[nanoid] === answer}
+                        
+                      />
+                      {decode(answer)}
+                    </label>
                   ))}
                 </div>
               </div>

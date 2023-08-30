@@ -67,12 +67,30 @@ body {
   gap: 10px; 
 }
 
-  .btn-answers {
-  flex: 1; 
+input[type="radio"] {
+  display: none;
+}
+
+[type='radio']:checked ~ label {
+    font-weight: 600;
+    background: #DBDEF0;
+    color: #293264;
+    
+}
+
+.btn-answers {
+  display: flex;
+  align-items: center;
+  flex: 1;
   height: 40px;
-  max-width: 200px; 
+  max-width: 200px;
   border-radius: 7px;
   border: 1px solid #4D5B9E;
   background-color: #F5F7FB;
   font-family: "Karla", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 5px;
 }
