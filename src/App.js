@@ -58,7 +58,9 @@ const App = () => {
   //   return shuffledArray
   // }
   
-
+  const handleChange = (e) => {
+    const value = e.target.checked
+  }
 
   return (
     <>
@@ -80,7 +82,7 @@ const App = () => {
                         name={`answer_${id}`}
                         value={answer}
                         checked={selectedAnswers[i] === answer}
-                        
+                        onChange={handleChange}
                       />
                       {decode(answer)}
                     </label>
